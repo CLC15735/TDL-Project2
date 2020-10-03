@@ -1,10 +1,14 @@
 package com.qa.ToDoList.persistance.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import com.sun.istack.NotNull;
 
@@ -20,30 +24,24 @@ import lombok.ToString;
 @Setter
 @ToString
 @EqualsAndHashCode
-public class Tasks {
+public class TDLists {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotNull
-	private String taskBody;
+	private String listTitle;
 	
-	@NotNull
-	private String taskPriority;
+	private String listSubtitle;
 	
+	@OneToMany(mappedBy = "tdLists", cascade = CascadeType.ALL)
+	private List<Tasks> tasks = new ArrayList<>();
 
-	@ManyToOne
-	private TDLists tdLists;
-
-
-	public Tasks(Long id, String taskBody, String taskPriority) {
-		super();
-		this.id = id;
-		this.taskBody = taskBody;
-		this.taskPriority = taskPriority;
+	public TDLists(String listTitle, String listSubtitle) {
+		this.listTitle = listTitle;
+		this.listSubtitle = listSubtitle;
 	}
-
 	
 	
 
