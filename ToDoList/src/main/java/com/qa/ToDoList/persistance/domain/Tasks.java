@@ -44,6 +44,13 @@ public class Tasks {
 		this.taskPriority = taskPriority;
 	}
 
+
+	public Tasks(String taskBody, String taskPriority) {
+		super();
+		this.taskBody = taskBody;
+		this.taskPriority = taskPriority;
+	}
+
 	
 	
 
