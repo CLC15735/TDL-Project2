@@ -16,7 +16,7 @@ import com.qa.ToDoList.persistance.domain.Tasks;
 import com.qa.ToDoList.persistance.repository.TasksRepository;
 
 @SpringBootTest
-public class TasksServiceClassIntegrationTest {
+public class TasksServiceIntegrationTest {
 	
 	@Autowired
 	private TasksService service;
@@ -47,7 +47,7 @@ public class TasksServiceClassIntegrationTest {
 		this.repo.deleteAll();
 		this.testTasks = new Tasks(taskBody, taskPriority);
 		this.testTasksWithId = this.repo.save(this.testTasks);
-		this.testTasksDTO = this.mapToDTO(testTasksWithId);
+		this.testTasksDTO = this.mapToDTO(this.testTasksWithId);
 		this.id = this.testTasksWithId.getId();
 	}
 	
