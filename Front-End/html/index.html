@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/myStyle.css">
+    <script src="https://kit.fontawesome.com/a10b9d576b.js" crossorigin="anonymous"></script>
     <title>To Do List</title>
 </head>
 <body>
@@ -14,50 +15,48 @@
         </div>
     </div>
     
-    <div>
-        <div class="card" style="width: 18rem;">
+    <div id="cardContainer">
+        <!-- <div class="card" style="width: 18rem;">
             <div class="headerCard">
                 <h1 style="color: rgb(4, 4, 53); font-size: 350%; font-family: 'TasksFont';" class="card-title" > New list</h1>
-                <p class= "card-subtitle" style="color: rgb(4, 4, 53); font-size: 200%; font-family:'TasksFont';">Subtitle
+                <p class= "card-subtitle" style="color: rgb(4, 4, 53); font-size: 160%; font-family:'TasksFont';">Subtitle
                     <a href="#">     
-                        <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" style="color: rgb(4, 4, 53);" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                        </svg> 
+                        <i class="far fa-edit"></i>
                     </a>  
                     <a href="#">     
-                        <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" class="bi bi-trash" style="color: rgb(4, 4, 53);" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                        </svg> 
+                        <i class="far fa-trash-alt" style="color: rgb(4, 4, 53); position: relative;"></i>
                     </a>   
                 </p>
             </div>
             <div class="card-body">
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    <a href="#" id="ReadOne">
-                        <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" style="color: rgb(4, 4, 53); " class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" >
-                            <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-                        </svg>
-                    </a>
-                    <a href="#" id="DeleteOne">
-                        <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-trash" style="color: rgb(4, 4, 53);" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                        </svg>
-                    </a>
-                </div>
+                <ul class="list-group">
+                    <li class="list-group-item" style="border-style: hidden;">
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            <a href="#" id="ReadOne">
+                                <i class="fas fa-info" style="color: rgb(4, 4, 53); position:relative; left: 20mm;"></i>
+                            </a>
+                            <a href="#" id="DeleteOne">
+                                <i class="far fa-trash-alt" style="color: rgb(4, 4, 53); position:relative; left: 20mm;"></i>
+                            </a>                    
+                        </div>
+                    </li>
+                    <li class="list-group-item" style="border-style: hidden;">
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                     </div>
+                    </li>
+                </ul>
               <a href="#" class="btn btn-outline-primary" style="transform: translate(28%, 30%);">
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                </svg>
+                <i class="far fa-plus-square"></i>
                 Add a new task</a>
             </div>
-        </div>
+        </div> -->
     </div>
+
+    <script src="../js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
