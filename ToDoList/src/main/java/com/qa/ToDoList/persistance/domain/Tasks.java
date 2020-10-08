@@ -33,7 +33,7 @@ public class Tasks {
 	private String taskPriority;
 	
 
-	@ManyToOne
+	@ManyToOne 
 	private TDLists tdLists;
 
 

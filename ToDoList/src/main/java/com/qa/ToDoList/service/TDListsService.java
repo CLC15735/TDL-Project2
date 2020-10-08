@@ -67,9 +67,9 @@ public class TDListsService {
 	public boolean delete (Long id) {
 		if (!this.repo.existsById(id)) {
 			throw new ListNotFoundException();
-		}
+		} else {
 		
-		this.repo.deleteById(id);
+		this.repo.deleteById(id);}
 		
 		return !this.repo.existsById(id);
 	}
