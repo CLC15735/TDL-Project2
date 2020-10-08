@@ -33,16 +33,16 @@ public class Tasks {
 	private String taskPriority;
 	
 
-	@ManyToOne
+	@ManyToOne 
 	private TDLists tdLists;
 
 
-	public Tasks(Long id, String taskBody, String taskPriority) {
-		super();
-		this.id = id;
-		this.taskBody = taskBody;
-		this.taskPriority = taskPriority;
-	}
+//	public Tasks(Long id, String taskBody, String taskPriority) {
+//		super();
+//		this.id = id;
+//		this.taskBody = taskBody;
+//		this.taskPriority = taskPriority;
+//	}
 
 
 	public Tasks(String taskBody, String taskPriority) {

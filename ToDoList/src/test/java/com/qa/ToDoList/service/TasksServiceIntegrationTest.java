@@ -27,9 +27,9 @@ public class TasksServiceIntegrationTest {
 	@Autowired
 	private ModelMapper mapper;
 	
-	private TasksDTO mapToDTO (Tasks tasks) {
-		return this.mapper.map(tasks, TasksDTO.class);
-	}
+//	private TasksDTO mapToDTO (Tasks tasks) {
+//		return this.mapper.map(tasks, TasksDTO.class);
+//	}
 	
 	private Tasks testTasks;
 	private Tasks testTasksWithId;
@@ -47,7 +47,7 @@ public class TasksServiceIntegrationTest {
 		this.repo.deleteAll();
 		this.testTasks = new Tasks(taskBody, taskPriority);
 		this.testTasksWithId = this.repo.save(this.testTasks);
-		this.testTasksDTO = this.mapToDTO(this.testTasksWithId);
+		this.testTasksDTO = this.mapper.map(this.testTasksWithId, TasksDTO.class);
 		this.id = this.testTasksWithId.getId();
 	}
 	

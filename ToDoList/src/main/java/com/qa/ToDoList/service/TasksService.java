@@ -64,9 +64,9 @@ public class TasksService {
 	public boolean delete(Long id) {
 		if (!this.repo.existsById(id)) {
 			throw new TaskNotFoundException();
-		}
+		} else {
 		
-		this.repo.deleteById(id);
+		this.repo.deleteById(id);}
 		//The return will be true when the task is deleted
 		return !this.repo.existsById(id);
 	}
