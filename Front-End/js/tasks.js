@@ -38,10 +38,8 @@ document.querySelector("form.tasks").addEventListener("submit", function(stop){
      let id = taskForm["taskId"].value;
      let taskBody = taskForm["taskBody"].value;
      let taskPriority = taskForm["taskPriority"].value;
-     updateTask(id, taskBody, taskPriority);
-    //  deleteTask(id);
+     updateTask(id, taskBody, taskPriority);     
 })
-
 
 function updateTask(id, taskBody, taskPriority) {
     //Convert integer into string
@@ -67,13 +65,7 @@ function updateTask(id, taskBody, taskPriority) {
    });
 }
 
-// function deleteTask(id) {
-//   fetch('http://localhost:9094/tasks/delete/' + id, {
-//     method: 'DELETE',
-//   })
-//   .then(res => res.text()) // or res.json()
-//   .then(res => console.log(res))
-// }
+ 
 
 
 

@@ -65,10 +65,3 @@ function updateList(id, listTitle, listSubtitle) {
    });
 }
 
-// function deleteList(id) {
-//   fetch('http://localhost:9094/tdLists/delete/' + id, {
-//     method: 'DELETE',
-//   })
-//   .then(res => res.text()) // or res.json()
-//   .then(res => console.log(res))
-// }

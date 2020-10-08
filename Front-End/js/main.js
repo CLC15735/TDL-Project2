@@ -63,22 +63,29 @@ function createCard(alldata) {
         p.appendChild(textSubtitle);
         header.appendChild(p);
 
-        //Edit and delete
+        //Edit, delete and create
         let edit = document.createElement("a");
         edit.href = "viewLists.html?id=" + key['id'];
         let editIcon = document.createElement("i");
         editIcon.className = "far fa-edit";
         editIcon.style = "color: rgb(4, 4, 53); position:relative; left: 3mm;";
-        // let trash = document.createElement("a");
-        // trash.href = "#";
-        // let trashIcon = document.createElement("i");
-        // trashIcon.className = "far fa-trash-alt";
-        // trashIcon.style = "color: rgb(4, 4, 53); position:relative; left: 5mm;";
+        let trash = document.createElement("a");
+        trash.href = "deleteList.html?id=" + key['id'];;
+        let trashIcon = document.createElement("i");
+        trashIcon.className = "far fa-trash-alt";
+        trashIcon.style = "color: rgb(4, 4, 53); position:relative; left: 4mm;";
+        let add = document.createElement("a");
+        add.href = "newList.html";
+        let addIcon = document.createElement("i");
+        addIcon.className = "fas fa-plus";
+        addIcon.style = "color: rgb(4, 4, 53); position:relative; left: 5mm;";
 
         p.appendChild(edit);
         edit.appendChild(editIcon);
-        // p.appendChild(trash);
-        // trash.appendChild(trashIcon);
+        p.appendChild(trash);
+        trash.appendChild(trashIcon);
+        p.appendChild(add);
+        add.appendChild(addIcon);
 
         console.log(key['tasks']);
         let body = document.createElement("div");
@@ -107,12 +114,18 @@ function createCard(alldata) {
             let textBody = document.createTextNode(values['taskBody'] + "");
             label.className = "form-check-label";
 
-            //Info 
+            //Info +trash2
             let info = document.createElement("a");
             info.href = "viewTasks.html?id=" + values['id'];
             let infoIcon = document.createElement("i");
             infoIcon.className = "fas fa-info";
             infoIcon.style = "color: rgb(4, 4, 53); position:relative; left: 8mm;";
+
+            let trash2 = document.createElement("a");
+            trash2.href = "deleteTask.html?id=" + values['id'];
+            let trash2Icon = document.createElement("i");
+            trash2Icon.className = "far fa-trash-alt";
+            trash2Icon.style = "color: rgb(4, 4, 53); position:relative; left: 10mm;";
 
             label.appendChild(textBody);
             ul.appendChild(li);
@@ -121,16 +134,14 @@ function createCard(alldata) {
             check.appendChild(label);
             check.appendChild(info);
             info.appendChild(infoIcon);
-
+            check.appendChild(trash2);
+            trash2.appendChild(trash2Icon);
           }
-
-        //Id of the list that has to be included for the new task
-        let taskAddId =key['id'];
+        
         let a = document.createElement("a");
         a.className = "btn btn-outline-primary";
         a.style = "transform: translate(80%, 30%);";
-        a.dataset.toggle = "modal"
-        a.dataset.target ="#exampleModal"
+        a.href = "newTask.html?id=" + values['id'];
         let addTask = document.createTextNode("  Add a new task")
         body.appendChild(a); 
 
@@ -142,37 +153,4 @@ function createCard(alldata) {
         }
     }
 
-  //   document.querySelector("form.addtasks").addEventListener("submit", function(stop){
-  //     stop.preventDefault();
-  //     let taskForm = document.querySelector("form.addtasks").elements;
-  //     console.log(taskForm);
-  //      let taskBody = taskForm["taskBody"].value;
-  //      let taskPriority = taskForm["taskPriority"].value;
-  //      addTask('1', taskBody, taskPriority);
-  // })
-
-  function addTask(id, taskBody, taskPriority) {
-    //Convert integer into string
-    let listId = parseInt(id);
-
-    fetch("http://localhost:9094/tasks/create", {
-     method: 'post',
-     headers: {
-       "Content-type": "application/json"
-    },
-     body:json = JSON.stringify({
-      "taskBody": taskBody,
-      "taskPriority": taskPriority,
-      "tdLists": {
-        "id" : listId
-      }
-     })
-   })
-   .then(res => res.json())
-      .then(function (data) {
-             console.log('Request succeeded with JSON response', data);
-               })
-  .catch(function (error) {
-         console.log('Request failed', error);
-   });
-}
+  
