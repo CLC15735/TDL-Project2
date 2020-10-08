@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -36,7 +35,8 @@ public class TDLists {
 	
 	private String listSubtitle;
 	
-	@OneToMany(mappedBy = "tdLists", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	//, fetch = FetchType.EAGER
+	@OneToMany(mappedBy = "tdLists", cascade = CascadeType.ALL)
 	private List<Tasks> tasks = new ArrayList<>();
 
 	public TDLists(String listTitle, String listSubtitle) {
@@ -44,12 +44,12 @@ public class TDLists {
 		this.listSubtitle = listSubtitle;
 	}
 
-	public TDLists(String listTitle, String listSubtitle, List<Tasks> tasks) {
-		super();
-		this.listTitle = listTitle;
-		this.listSubtitle = listSubtitle;
-		this.tasks = tasks;
-	}
+//	public TDLists(String listTitle, String listSubtitle, List<Tasks> tasks) {
+//		super();
+//		this.listTitle = listTitle;
+//		this.listSubtitle = listSubtitle;
+//		this.tasks = tasks;
+//	}
 	
 	
 	
