@@ -11,7 +11,7 @@ fetch('http://localhost:9094/tdLists/read')
       response.json().then(function(alldata) {
         console.log(alldata);
 
-        let data = Object.keys(alldata[0]);
+        //let data = Object.keys(alldata[0]);
 
         createCard(alldata);
       });
