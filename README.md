@@ -12,8 +12,8 @@ Version Control System: Git
 	-Remote: GitHub
 	-Local: GitBash
 
-Software: Java 7
-Development tools: Eclipse/Spring or Maven
+Software: Java 7, JavaScript
+Development tools: Eclipse/Spring or Maven, Visual Studio
 Testing: JUnit, Selenium
 Database management: MySQL 5.7
 
