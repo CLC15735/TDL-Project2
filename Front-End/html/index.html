@@ -10,78 +10,20 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1 style="color: rgba(141, 18, 38, 0.692); font-family: 'TitleFont'; font-size: 400%;" class="centered" >TO DO LIST</h1>
+        <div class="header" id="headerTD">
+            <h1 style="color: rgba(141, 18, 38, 0.692); font-family: 'TitleFont'; font-size: 300%;" class="centered" >
+                <a href="newList.html">
+                    <i class="fas fa-plus" style="color: rgba(141, 18, 38, 0.692); position:relative; left: 2mm;"></i>
+                </a>
+            TO DO LIST</h1>
         </div>
     </div>
     
     <div id="cardContainer">
-         <!-- <div class="card" style="width: 18rem;">
-            <div class="headerCard">
-                <h1 style="color: rgb(4, 4, 53); font-size: 350%; font-family: 'TasksFont';" class="card-title" > New list</h1>
-                <p class= "card-subtitle" style="color: rgb(4, 4, 53); font-size: 160%; font-family:'TasksFont';">Subtitle
-                    <a href="#">     
-                        <i class="far fa-edit"></i>
-                    </a>  
-                    <a href="#">     
-                        <i class="far fa-trash-alt" style="color: rgb(4, 4, 53); position: relative;"></i>
-                    </a>   
-                </p>
-            </div>
-            <div class="card-body">
-                <ul class="list-group">
-                    <li class="list-group-item" style="border-style: hidden;">
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                            <a href="#" id="ReadOne">
-                                <i class="fas fa-info" style="color: rgb(4, 4, 53); position:relative; left: 20mm;"></i>
-                            </a>
-                            <a href="#" id="DeleteOne">
-                                <i class="far fa-trash-alt" style="color: rgb(4, 4, 53); position:relative; left: 20mm;"></i>
-                            </a>                    
-                        </div>
-                    </li>
-                    <li class="list-group-item" style="border-style: hidden;">
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                     </div>
-                    </li>
-                </ul>
-              <a href="#" class="btn btn-outline-primary" style="transform: translate(28%, 30%);">
-                <i class="far fa-plus-square"></i>
-                Add a new task</a>
-            </div>
-        </div> -->
+        
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add new Task</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body">
-                <form class="addtasks" method="POST" action="index.html">
-                    <div class="form-group">
-                        <label for="taskBody">To do: </label>
-                        <input type="text" class="form-control" id="taskBody">
-                    </div>
-                    <div class="form-group">
-                        <label for="taskPriority">Priority: </label>
-                        <input type="text" class="form-control" id="taskPriority">
-                    </div>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </form>
-            
-            </div>
-        </div>
-        </div>
-    </div>
+    
 
     <script src="../js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

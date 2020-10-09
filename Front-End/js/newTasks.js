@@ -1,10 +1,6 @@
 const findId = new URLSearchParams(window.location.search);
 
 
-for (let found of findId) {
-    let id = found[1];
-}
-
 document.querySelector("form.ntasks").addEventListener("submit", function(stop){
     stop.preventDefault();
     let taskForm = document.querySelector("form.ntasks").elements;

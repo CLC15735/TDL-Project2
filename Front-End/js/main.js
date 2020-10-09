@@ -10,17 +10,6 @@ fetch('http://localhost:9094/tdLists/read')
       // Examine the text in the response
       response.json().then(function(alldata) {
         console.log(alldata);
-        
-        for (let key of alldata) {
-          document.querySelector("form.addtasks").addEventListener("submit", function(stop){
-          stop.preventDefault();
-          let taskForm = document.querySelector("form.addtasks").elements;
-          console.log(taskForm);
-          let taskBody = taskForm["taskBody"].value;
-          let taskPriority = taskForm["taskPriority"].value;
-          addTask(key[id], taskBody, taskPriority);
-        })
-        }
 
         let data = Object.keys(alldata[0]);
 
@@ -75,7 +64,7 @@ function createCard(alldata) {
         trashIcon.className = "far fa-trash-alt";
         trashIcon.style = "color: rgb(4, 4, 53); position:relative; left: 4mm;";
         let add = document.createElement("a");
-        add.href = "newList.html";
+        add.href = "newList.html?";
         let addIcon = document.createElement("i");
         addIcon.className = "fas fa-plus";
         addIcon.style = "color: rgb(4, 4, 53); position:relative; left: 5mm;";
@@ -86,6 +75,7 @@ function createCard(alldata) {
         trash.appendChild(trashIcon);
         p.appendChild(add);
         add.appendChild(addIcon);
+        
 
         console.log(key['tasks']);
         let body = document.createElement("div");
@@ -96,7 +86,8 @@ function createCard(alldata) {
             
         card.appendChild(body);
         body.appendChild(ul);
-            
+        
+        
         for(values of key['tasks']) {
             console.log(values['taskBody']); 
 
@@ -141,7 +132,7 @@ function createCard(alldata) {
         let a = document.createElement("a");
         a.className = "btn btn-outline-primary";
         a.style = "transform: translate(80%, 30%);";
-        a.href = "newTask.html?id=" + values['id'];
+        a.href = "newTask.html?id=" + key['id'];
         let addTask = document.createTextNode("  Add a new task")
         body.appendChild(a); 
 
