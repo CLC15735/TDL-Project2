@@ -1,0 +1,82 @@
+body{
+    padding: 0%;
+    margin: 0;
+    background-color:rgba(250, 240, 230, 0.185);
+}
+
+.container{
+    padding: 10px;
+    width: 1180px;
+    margin: auto;
+}
+
+.card{
+    padding: 0 0 10px 0;
+    width: 380px;
+    margin: 2% auto 2% auto;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.header{
+    width: 100%;
+    height: 100px;
+    background-image: url('../images/pastel.png');
+    background-size: 100% 200%;
+    border: 3px;
+    border-style: solid;
+    border-color: rgba(141, 18, 38, 0.692);
+    background-repeat: no-repeat;
+    border-radius: 15px 15px 15px 15px;
+    position: relative;
+}
+
+.headerCard{
+    width: 100%;
+    height: 100px;
+    background-color: paleturquoise;
+    background-size: 100% 200%;
+    background-repeat: no-repeat;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+}
+.centered{
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.card-title{
+    margin: 0;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+}
+
+.card-subtitle{
+    margin: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-30%, 20%);
+}
+
+@font-face {
+    font-family: TitleFont;
+    src: url(../fonts/XPLOR\ Bold-Regular.otf);
+}
+
+/* @font-face {
+    font-family: TasksFont;
+    src: url(../fonts/Horizon-Regular.otf);
+} */
+
+@font-face {
+    font-family: TasksFont;
+    src: url(../fonts/Bolica.ttf);
+}
+
+

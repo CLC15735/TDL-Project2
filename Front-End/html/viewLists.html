@@ -4,28 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/myStyle.css">
-    <script src="https://kit.fontawesome.com/a10b9d576b.js" crossorigin="anonymous"></script>
-    <title>To Do List</title>
+    <title>Update List</title>
 </head>
 <body>
     <div class="container">
-        <div class="header" id="headerTD">
-            <h1 style="color: rgba(141, 18, 38, 0.692); font-family: 'TitleFont'; font-size: 300%;" class="centered" >
-                <a href="newList.html">
-                    <i class="fas fa-plus" style="color: rgba(141, 18, 38, 0.692); position:relative; left: 2mm;"></i>
-                </a>
-            TO DO LIST</h1>
-        </div>
+        <form class="lists" method="POST" action="index.html">
+            <div class="form-group">
+            <label for="taskId">List ID</label>
+            <input type="number" class="form-control" disabled id="listId">
+            
+            </div>
+            <div class="form-group">
+            <label for="taskBody">Title: </label>
+            <input type="text" class="form-control" id="listTitle">
+            </div>
+            <div class="form-group">
+                <label for="taskPriority">Description: </label>
+                <input type="text" class="form-control" id="listSubtitle">
+            </div>
+            <button type="submit" class="btn btn-primary" id="update">Update</button>
+            <a href="index.html" class="btn btn-secondary">Go back</a>
+        </form>
     </div>
-    
-    <div id="cardContainer">
-        
-    </div>
-    <!-- Modal -->
-    
 
-    <script src="../js/main.js"></script>
+    <script src="../js/lists.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
